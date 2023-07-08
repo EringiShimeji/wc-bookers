@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'books/index', as: 'books'
-  get 'books/edit'
-  get 'books/show'
+  get 'books' => 'books#index', as: 'books'
+  post 'books' => 'books#create'
+  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
+  get 'books/:id' => 'books#show', as: 'book'
+  delete 'books/:id' => 'books#delete', as: 'delete_book'
   get '/' => 'homes#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
