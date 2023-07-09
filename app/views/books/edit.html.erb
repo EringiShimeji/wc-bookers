@@ -8,10 +8,12 @@
 
   <div class="field">
     <%= f.label :body %>
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </div>
 
   <div class="actions">
     <%= f.submit 'Update Book' %>
   </div>
+
+  <%= link_to "Show", book_path(@book.id) %> | <%= link_to "Back", books_path %>
 <% end %>
